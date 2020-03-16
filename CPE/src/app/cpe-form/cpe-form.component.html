@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-3 card card-body mt-4">
+    <h1>CPE Mapping Form</h1>
+    <form class="example-form" #form='ngForm' (ngSubmit)='addProduct(form.value); form.reset();'>
+        <h4>Product Name in Query</h4>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input type="text" matInput placeholder="Your answer" name="product" #product='ngModel' ngModel required>
+        </mat-form-field>
+        <h4>Vendor as in CPE</h4>
+        <mat-form-field appearance="outline">
+            <mat-select placeholder="Choose" name="cpe_vendor" #cpe_vendor='ngModel' ngModel required>
+              <mat-option value="Microsoft">Microsoft</mat-option>
+              <mat-option value="Cisco">Cisco</mat-option>
+              <mat-option value="Oracle">Oracle</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <h4>Product Name in CPE</h4>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <input type="text" matInput placeholder="Your answer" name="cpe_product" #cpe_product='ngModel' ngModel required>
+        </mat-form-field>
+        <h4>Version</h4>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <input type="number" matInput placeholder="Your answer" name="version" #version='ngModel' ngModel required>
+        </mat-form-field>
+        <button mat-button [disabled]='form.invalid'>Submit</button>
+      </form>
+</div>
